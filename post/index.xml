@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Post on 君其克的杂货铺</title>
+    <link>http://junchick.club/post/</link>
+    <description>Recent content in Post on 君其克的杂货铺</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>All rights reserved by junchick - 2016</copyright>
+    <lastBuildDate>Wed, 13 Apr 2016 18:06:27 +0800</lastBuildDate>
+    <atom:link href="http://junchick.club/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>如何用Github &#43; Hugo搭一个私人博客</title>
+      <link>http://junchick.club/post/how-to-build-a-blog/</link>
+      <pubDate>Wed, 13 Apr 2016 18:06:27 +0800</pubDate>
+      
+      <guid>http://junchick.club/post/how-to-build-a-blog/</guid>
+      <description>
+
+&lt;p&gt;回想起来，搭个免费的独立博客仍然是件麻烦事，不过做站长的感觉足以值得你这么干。&lt;/p&gt;
+
+&lt;p&gt;虽然从读书起就访问过一些独立博客，可总觉得和自己隔个十万八千里。 独立博客是牛人们折腾的东西，自己一没东西写，二写得出也没人看。不如写写代码做个安静的美程序猿就可以了。&lt;/p&gt;
+
+&lt;p&gt;谁料突然有一天的工作之余萌生了个与当下不符的想法——就算这辈子做不成牛，也可以学学样子嘛。式样要摆足，比如搭个自己的博客，偶尔还可以写点东西，说不定有人用得着呢？&lt;/p&gt;
+
+&lt;p&gt;说干就干！我先关注的是WordPress这个快速建站工具，确实它看起来最为方便。可随之发现用WordPress建站是要虚拟空间的，百度了下最便宜的也得3百大洋一年！简直是强盗，果断放弃。更何况不久我便了解到了一只叫Github的“章鱼猫”以及一种免费的、够Geek、够码农气质的建站办法。&lt;/p&gt;
+
+&lt;p&gt;因为是第一篇文章，扯得有些远了，有的看官也许已经不耐烦叉掉网页了（希望不多），&lt;/p&gt;
+
+&lt;h2 id=&#34;回到正题:23c89e730caf6d7f2c5c4ee11eb465ea&#34;&gt;回到正题&lt;/h2&gt;
+
+&lt;p&gt;要搭建一个私人博客，你需要：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;有一个域名，像 www.baidu.com 这样。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;有一个虚拟空间或者服务器，来存放你的网站。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;当然最重要的是要有一组博客页面。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;博客页面可以做得很复杂，但我信奉的是简约美与内容至上的原则：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;要简单，但五脏俱全&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;我的选择是静态网站，类似中学时做的html网页。。。早期网站一般属于这类，无数据库，无交互性功能。但不要以为现在的静态网页还跟以前一样，现在做出的效果不比动态网页差多少。&lt;/p&gt;
+
+&lt;p&gt;这块可选的工具有很多，其中Hugo、Jeykll与Hexo最为常用。我是windows用户，Hugo便成了我的首选，因为不是人人家都有装linux的。 Hugo的安装非常简单，只要解压+配置环境变量即可，相比之下Jekyll要先装Ruby，Hexo要先装node.js。 在静态化大量页面时，Hugo的速度也比Jekyll与Hexo快不少。&lt;/p&gt;
+
+&lt;h2 id=&#34;markdown:23c89e730caf6d7f2c5c4ee11eb465ea&#34;&gt;MARKDOWN&lt;/h2&gt;
+
+&lt;p&gt;但是在讲Hugo之前我得先说一下Markdown，它是书写你内容资源的工具。&lt;/p&gt;
+
+&lt;p&gt;Markdown是一种文本标记语言。它比纯文本复杂点，又比Word这种需要大量排版、字体设置的工具简单点。 这也意味着我们不用痛苦的写html标签来控制排版，也不会被Word复杂的格式设置干扰到码字本身。&lt;/p&gt;
+
+&lt;p&gt;一开始可能不习惯，但我认为慢慢应该能发现它的优点，毕竟据说&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;目前也被越来越多的写作爱好者，撰稿者广泛使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这类编辑器似乎都是为Mac帅富设计的，Windows的用户可以选择我正在用的MarkdownPad。Win10系统安装时会出现点小问题，不过按软件内提示下载两个东西应该能解决，其他Windows用户安装时请忽略那个低版本.Net Framwork。&lt;/p&gt;
+
+&lt;h2 id=&#34;hugo:23c89e730caf6d7f2c5c4ee11eb465ea&#34;&gt;Hugo&lt;/h2&gt;
+
+&lt;p&gt;在这个内容为王的时代，搞定Markdown你就已经成功了一半。。。&lt;/p&gt;
+
+&lt;p&gt;然后我们开始讲另一半&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Hugo :: A fast and modern static website engine&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;1-安装:23c89e730caf6d7f2c5c4ee11eb465ea&#34;&gt;1. 安装&lt;/h4&gt;
+
+&lt;p&gt;前面也提到过Hugo的安装是它最大的优点之一，选择你需要的&lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;版本&lt;/a&gt;：&lt;/p&gt;
+
+&lt;p&gt;64位系统不论intel还是amd处理器都请选择&lt;code&gt;hugo_0.15_windows_amd64.zip&lt;/code&gt;，&lt;/p&gt;
+
+&lt;p&gt;32位intel用户请选择&lt;code&gt;hugo_0.15_windows_386_32-bit-only.zip&lt;/code&gt;，&lt;/p&gt;
+
+&lt;p&gt;32位amd用户不要用0.15版，请选择较老版本的安装包。&lt;/p&gt;
+
+&lt;p&gt;然后在任意位置新建一个文件夹叫Hugo，在文件夹中再新建两个子文件夹，一个叫Bin，另一个叫Sites。把安装包中的三个文件解压到Bin目录并且把那个exe文件改名叫hugo.exe。最后在环境变量Path末尾添加“F:\hugo\bin\hugo.exe”这种路径。&lt;/p&gt;
+
+&lt;p&gt;现在打开cmd，输入hugo version看有没有反应。
+&lt;pre&gt;&lt;code&gt;C:\Users\woread&amp;gt;hugo version
+Hugo Static Site Generator v0.15 BuildDate: 2015-11-25T14:35:20+8:00
+&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;2-生成静态网站的基本框架:23c89e730caf6d7f2c5c4ee11eb465ea&#34;&gt;2. 生成静态网站的基本框架&lt;/h4&gt;
+
+&lt;p&gt;然后我们可以开始网站基本框架的搭设。先切换到Sites目录，然后输入
+&lt;pre&gt;&lt;code&gt;hugo new site example.com&lt;/code&gt;&lt;/pre&gt;正常情况下，你应该看不到任何信息，但dir一下可以看到网站已经生成了。&lt;/p&gt;
+
+&lt;h4 id=&#34;3-加上一个主题模板:23c89e730caf6d7f2c5c4ee11eb465ea&#34;&gt;3. 加上一个主题模板&lt;/h4&gt;
+
+&lt;p&gt;首先在cmd中cd到网站的根目录如 f:\hugo\sites\example.com\，操作如下
+&lt;pre&gt;
+&lt;code&gt;F:\hugo\sites\example.com&amp;gt;mkdir themes
+F:\hugo\sites\example.com&amp;gt;cd themes
+F:\hugo\sites\example.com\themes&amp;gt;git clone &lt;a href=&#34;https://github.com/vjeantet/hugo-theme-casper&#34;&gt;https://github.com/vjeantet/hugo-theme-casper&lt;/a&gt; casper
+Cloning into &amp;lsquo;casper&amp;rsquo;&amp;hellip;
+remote: Counting objects: 473, done.
+Receiving objects: 97% (&lt;sup&gt;462&lt;/sup&gt;&amp;frasl;&lt;sub&gt;473&lt;/sub&gt;), 1.94 MiB | 16.00KiB/s
+&lt;/code&gt;&lt;/pre&gt;
+因为git暂时还没有安装，所以你应该看不到我这样的提示。并不是逗你玩。。。我只是觉得按网站搭建的逻辑顺序讲解工具的使用更容易让人理解。&lt;/p&gt;
+
+&lt;p&gt;然后是配置整个网站的config.toml，可参考casper主题&lt;a href=&#34;http://themes.gohugo.io/casper/&#34;&gt;首页&lt;/a&gt;，具体参数的作用请自行摸索。。。当然后续更高级的配置会要修改模板文件本身，但这些在hugo的官网上也都说得非常清楚。&lt;/p&gt;
+
+&lt;p&gt;如果你正确的进行了配置，接下来你就能欣赏这个模板的效果了。
+&lt;pre&gt;
+&lt;code&gt;F:\hugo\sites\example.com&amp;gt;hugo server -t casper &amp;ndash;buildDrafts &amp;ndash;renderToDisk&lt;/code&gt;&lt;/pre&gt;
+如果没有ERROR刷屏，那么打开浏览器，输入&lt;code&gt;http://localhost:1313&lt;/code&gt;，然后体验吧！&lt;/p&gt;
+
+&lt;p&gt;P.S. 其他主题可以在&lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;这里&lt;/a&gt;找到。&lt;/p&gt;
+
+&lt;h2 id=&#34;git:23c89e730caf6d7f2c5c4ee11eb465ea&#34;&gt;Git&lt;/h2&gt;
+
+&lt;p&gt;Git是Linux的创始人为了帮助管理Linux内核开发而开发的一个分布式的版本控制软件，平时听得较多的是SVN。它有很多的用处与功能，这里我们不多叙述。
+我们实际要使用的只是访问Github而已，虽然Github也提供了Windows版本的客户端或者Powershell，但我下载过不是很好用。建议还是老实安装标准的Git for windows，用Bash来访问Github，下载可以直接从&lt;a href=&#34;http://rj.baidu.com/soft/detail/30195.html?ald&#34;&gt;百度软件中心&lt;/a&gt;处获得。&lt;/p&gt;
+
+&lt;h2 id=&#34;github:23c89e730caf6d7f2c5c4ee11eb465ea&#34;&gt;Github&lt;/h2&gt;
+
+&lt;p&gt;Github是一个庞大的代码托管平台，说白了就是做云存储生意的，但难得的是他提供了对开源项目的免费支持（别认为这个与你的网站无关，想想看前面讲的“服务器或者虚拟空间”）。这里利用了Github Pages这项服务。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;GitHub Pages are public webpages hosted and published through our site.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;首先你得先打开浏览器，注册一个Github账号，然后创建一个&lt;em&gt;username&lt;/em&gt;.github.io的repository。可以参考Github Pages的主页，但是创建完repository请先暂停一下。&lt;/p&gt;
+
+&lt;p&gt;因为你得把自己的计算机与github账号绑定起来（也就是登陆，不过比普通的登陆更复杂）。
+打开你的Git Bash，按如下操作：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;生成ssh密钥，address@youremail.com需要换成你在github注册时用的email。
+&lt;pre&gt;
+&lt;code class=&#34;Bash&#34;&gt;$ cd ~/.ssh
+$ ssh-keygen -t rsa -C &amp;ldquo;address@youremail.com&amp;rdquo;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;到github的Settings中的SSH and GPG keys选项中添加你本地的id_rsa.pub文件的内容(公钥)，这个文件的位置可以在（1.）中的指令执行完用pwd查看，用文本方式打开复制里面的内容即可。&lt;/li&gt;
+&lt;li&gt;搞定后，可以用&lt;code&gt;$ ssh -T git@github.com&lt;/code&gt;测试密码验证是不是通过。遇到yes/no的选择时选yes，不出意外可以见到&lt;code&gt;You&#39;ve successfully authenticated&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;在账号绑定之后，你还得在git中完善下自己的个人信息。github可能会用来做权限判断。
+&lt;pre&gt;
+&lt;code class=&#34;Bash&#34;&gt;$ git config &amp;ndash;global user.name &amp;ldquo;your name&amp;rdquo;
+$ git config &amp;ndash;global user.email &amp;ldquo;your_email@youremail.com&amp;rdquo;
+&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;然后是将前边生成的模板网站同步到github空间。在Git Bash中切换到你的Sites文件夹目录，然后将Github上username.github.io这个repository同步到你的本地电脑。
+&lt;pre&gt;
+&lt;code class=&#34;Bash&#34;&gt;$ git clone &lt;a href=&#34;https://github.com/username/username.github.io&#34;&gt;https://github.com/username/username.github.io&lt;/a&gt;
+&lt;/code&gt;&lt;/pre&gt;
+将先前用hugo生成的example.com/public文件夹中的全部内容（除开.git的隐藏目录）复制到Sites/username.github.io。&lt;/p&gt;
+
+&lt;p&gt;最后将Sites/username.github.io同步到Github端就大功告成了，注意username换成你自己的。&lt;/p&gt;
+
+&lt;p&gt;还可以参考Github Pages首页&lt;a href=&#34;https://pages.github.com/&#34;&gt;教程&lt;/a&gt;。
+&lt;pre&gt;
+&lt;code class=&#34;Bash&#34;&gt;$ git remote add origin &lt;a href=&#34;https://github.com/username/username.github.io.git&#34;&gt;https://github.com/username/username.github.io.git&lt;/a&gt;
+$ git add &amp;ndash;all
+$ git commit -m &amp;ldquo;你对本次同步的注释内容&amp;rdquo;
+$ git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+如果没有报错的话，你现在已经可以在username.github.io看到你的网站了。&lt;/p&gt;
+
+&lt;h2 id=&#34;域名与dns:23c89e730caf6d7f2c5c4ee11eb465ea&#34;&gt;域名与DNS&lt;/h2&gt;
+
+&lt;p&gt;to be continue&amp;hellip;.&lt;/p&gt;
+
+&lt;h2 id=&#34;评论功能-快速外链-目录等:23c89e730caf6d7f2c5c4ee11eb465ea&#34;&gt;评论功能、快速外链、目录等&lt;/h2&gt;
+
+&lt;p&gt;to be continue&amp;hellip;.&lt;/p&gt;
+
+&lt;h2 id=&#34;接入第三方统计工具:23c89e730caf6d7f2c5c4ee11eb465ea&#34;&gt;接入第三方统计工具&lt;/h2&gt;
+
+&lt;p&gt;to be continue&amp;hellip;.&lt;/p&gt;
+
+&lt;h2 id=&#34;github拒绝-百度爬虫检索问题:23c89e730caf6d7f2c5c4ee11eb465ea&#34;&gt;github拒绝 百度爬虫检索问题&lt;/h2&gt;
+
+&lt;p&gt;to be continue&amp;hellip;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
