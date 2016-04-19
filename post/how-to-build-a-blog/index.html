@@ -80,7 +80,7 @@
         
             <i class='fa fa-road'></i>
             <li class="nav-opened" role="presentation">
-            	<a href="">to be continue</a>
+            	<a href="/">to be continue</a>
             </li>
         
     </ul>
@@ -188,7 +188,7 @@
 
 <p>在这个内容为王的时代，搞定Markdown你就已经成功了一半。。。</p>
 
-<p>然后我们开始讲另一半</p>
+<p>然后我们开始讲另一半，一个快速建站引擎：</p>
 
 <blockquote>
 <p>Hugo :: A fast and modern static website engine</p>
@@ -204,21 +204,24 @@
 
 <p>32位amd用户不要用0.15版，请选择较老版本的安装包。</p>
 
-<p>然后在任意位置新建一个文件夹叫Hugo，在文件夹中再新建两个子文件夹，一个叫Bin，另一个叫Sites。把安装包中的三个文件解压到Bin目录并且把那个exe文件改名叫hugo.exe。最后在环境变量Path末尾添加“F:\hugo\bin\hugo.exe”这种路径。</p>
+<p>然后在任意位置新建一个文件夹叫Hugo，在文件夹中再新建两个子文件夹，一个叫Bin，另一个叫Sites。将安装包解压到Bin目录并在环境变量Path中添加路径如：“F:\hugo\bin\hugo.exe”（这里不一定是hugo.exe，看你把exe改成什么名字了）。</p>
 
-<p>现在打开cmd，输入hugo version看有没有反应。
+<p>现在打开cmd，输入hugo version看看是不是有下面的反应。
 <pre><code>C:\Users\woread&gt;hugo version
 Hugo Static Site Generator v0.15 BuildDate: 2015-11-25T14:35:20+8:00
 </code></pre></p>
 
 <h4 id="2-生成静态网站的基本框架:23c89e730caf6d7f2c5c4ee11eb465ea">2. 生成静态网站的基本框架</h4>
 
-<p>然后我们可以开始网站基本框架的搭设。先切换到Sites目录，然后输入
-<pre><code>hugo new site example.com</code></pre>正常情况下，你应该看不到任何信息，但dir一下可以看到网站已经生成了。</p>
+<p>然后我们可以开始搭建网站的基本框架了，只需一条指令。先切换到Sites目录，然后输入
+<pre><code>hugo new site example.com</code></pre>
+你应该看不到任何信息，但dir一下可以发现网站已经生成了。</p>
 
 <h4 id="3-加上一个主题模板:23c89e730caf6d7f2c5c4ee11eb465ea">3. 加上一个主题模板</h4>
 
-<p>首先在cmd中cd到网站的根目录如 f:\hugo\sites\example.com\，操作如下
+<p>HUGO中的主题模板类似PPT的模板，可以让不懂设计的人创造出一个美观的网站。而且不同的模板也集成了不同的高级功能，本站点使用的主题是<a href="http://themes.gohugo.io/casper/">casper</a>，其他主题可以在<a href="http://themes.gohugo.io/">这里</a>找到。</p>
+
+<p>至于将模板集成到你的基本框架，你只需要切换到2.中新建的网站的根目录，然后操作如下：
 <pre>
 <code>F:\hugo\sites\example.com&gt;mkdir themes
 F:\hugo\sites\example.com&gt;cd themes
@@ -227,21 +230,28 @@ Cloning into &lsquo;casper&rsquo;&hellip;
 remote: Counting objects: 473, done.
 Receiving objects: 97% (<sup>462</sup>&frasl;<sub>473</sub>), 1.94 MiB | 16.00KiB/s
 </code></pre>
-因为git暂时还没有安装，所以你应该看不到我这样的提示。并不是逗你玩。。。我只是觉得按网站搭建的逻辑顺序讲解工具的使用更容易让人理解。</p>
+注意这里有个<code>git clone</code>命令，这个命令是从远程git服务同步一个目录（模板）下来。但因为git暂时还没有安装，你应该看不到我这样的提示（并不是逗你玩。。。），我只是觉得按网站搭建的逻辑顺序来讲解这些工具的使用更容易让人理解。</p>
 
-<p>然后是配置整个网站的config.toml，可参考casper主题<a href="http://themes.gohugo.io/casper/">首页</a>，具体参数的作用请自行摸索。。。当然后续更高级的配置会要修改模板文件本身，但这些在hugo的官网上也都说得非常清楚。</p>
+<p>然后是配置整个网站的config.toml，可参考casper首页中的说明（其实如果你hugo玩得比较6了，自己也能写的，casper其实只是hugo中template的一个实例化），具体参数的作用请自行摸索。。。当然后续更高级的配置会要修改模板文件本身，这类操作后面也会提到一部分，但最全面详细的只能是hugo的<a href="http://gohugo.io/overview/introduction/">官方文档</a>。</p>
 
-<p>如果你正确的进行了配置，接下来你就能欣赏这个模板的效果了。
+<p>如果你运（配）气（置）不（对）错（了），准备下欣赏劳动成果啦！</p>
+
+<p>-t 是 &ndash;theme的缩写；</p>
+
+<p>&ndash;buildDrafts是因为内容markdown文件默认是draft，不配置不会纳入站点；</p>
+
+<p>&ndash;renderToDisk是因为我机器原因必须加上，你可以试试不加。</p>
+
 <pre>
-<code>F:\hugo\sites\example.com&gt;hugo server -t casper &ndash;buildDrafts &ndash;renderToDisk</code></pre>
-如果没有ERROR刷屏，那么打开浏览器，输入<code>http://localhost:1313</code>，然后体验吧！</p>
+<code>F:\hugo\sites\example.com>hugo server -t casper --buildDrafts --renderToDisk</code></pre>
 
-<p>P.S. 其他主题可以在<a href="http://themes.gohugo.io/">这里</a>找到。</p>
+<p><code>hugo server</code>命令是在本地跑了个服务端，如果没有ERROR刷屏，通过<a href="http://localhost:1313就可以访问了。">http://localhost:1313就可以访问了。</a></p>
 
 <h2 id="git:23c89e730caf6d7f2c5c4ee11eb465ea">Git</h2>
 
-<p>Git是Linux的创始人为了帮助管理Linux内核开发而开发的一个分布式的版本控制软件，平时听得较多的是SVN。它有很多的用处与功能，这里我们不多叙述。
-我们实际要使用的只是访问Github而已，虽然Github也提供了Windows版本的客户端或者Powershell，但我下载过不是很好用。建议还是老实安装标准的Git for windows，用Bash来访问Github，下载可以直接从<a href="http://rj.baidu.com/soft/detail/30195.html?ald">百度软件中心</a>处获得。</p>
+<p>Git是Linux的创始人为了帮助管理Linux内核开发而开发的一个分布式的版本控制软件，平时听得较多的是SVN。它有很多的用处与功能，这里我们不多叙述（话说越来越觉得git好用了）。其实我们用git只是为了访问Github而已，有些复杂的功能没必要纠结，完全可以绕过去。Git的使用可以查阅<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/">廖雪峰的教程</a>，当然也可以在本页下方留言。</p>
+
+<p>虽然Github也提供了Windows版本的客户端或者Powershell，但我下载过不是很好用。建议还是老实安装标准的Git for windows，用Bash来访问Github，下载可以直接从<a href="http://rj.baidu.com/soft/detail/30195.html?ald">百度软件中心</a>处获得。</p>
 
 <h2 id="github:23c89e730caf6d7f2c5c4ee11eb465ea">Github</h2>
 
